@@ -11,7 +11,7 @@ A simple python implementation of Information-Theoretic Model Predictive Path-In
 
 This work was part of my final project for EE 7500: Model Predictive Control class taught by [Dr. Xiangyu Meng](https://sites.google.com/view/xmeng/home?authuser=0) at Louisiana State University.
 
-## Supported vehicle models
+## Supported Dynamics models
 
 * Ideal Differential Drive: See my project report in ```pdfs_notes``` for more details
 * Ideal Bicycle model --> Head over to to Mizuho's repository.
