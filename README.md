@@ -20,9 +20,11 @@ This work was part of my final project for EE 7500: Model Predictive Control cla
 
 * Oval path with circular obstacles
 
+https://github.com/user-attachments/assets/94782162-5836-463f-b8b2-d517084519e6
 
 * Figure-8 path.
 
+https://github.com/user-attachments/assets/59da69be-e605-4256-b4b6-df89c486909e
 
 ## Setup
 
