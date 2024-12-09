@@ -1,24 +1,28 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-# Simple MPPI Implementation with Python
+# A Simple Python Implementation of Information-Theoretic Model Predictive Path Integral Controller
 
-A simple Model Predictive Path-Integral (MPPI) controller implementation based on the work by [Mizuho Aoki](https://mizuhoaoki.github.io/). It implements a Python version of MPPI controller introduced by [[G. Williams et al., 2018]](#references) in their 2018 paper.
+A simple python implementation of Information-Theoretic Model Predictive Path-Integral (MPPI) controller introduced in [[G. Williams et al., 2018]](#references) in their 2018 paper. This project is based on the work by [Mizuho Aoki](https://mizuhoaoki.github.io/) but contains the following modifications
 
-Note that the ```stage_cost``` and ```terminal_cost``` functions are both a simple quadratic const function. I opted to remove terminal cost.
+* Notebook to generate and visualize custom trajectories
+* JIT acceleration of cost function evaluation using Numba.
+* Ideal-Differential Drive Kinematic model
+* Both ```stage``` and ```terminal``` costs implemented as simple quadratic const function.
 
-**TODO** write one two lines regarding the inputs, outputs of the system, talk about compatiblity with ROS based linear body twist command.
+This work was part of my final project for EE 7500: Model Predictive Control class taught by [Dr. Xiangyu Meng](https://sites.google.com/view/xmeng/home?authuser=0) at Louisiana State University.
 
 ## Supported vehicle models
 
-* Ideal Differential Drive --> tested
-* Ideal Bicycle model --> Refer to Mizuho's repository.
+* Ideal Differential Drive: See my project report in ```pdfs_notes``` for more details
+* Ideal Bicycle model --> Head over to to Mizuho's repository.
 
-<!-- TODO add video of Diff drive robot once ready -->
-<!-- <img src="./media/pathtracking_obav_demo.gif" width="500px" alt="pathtracking and obstacle avoidance demonstraion">
-<img src="./media/pathtracking_demo.gif" width="500px" alt="pathtracking demonstraion">
-<img src="./media/pendulum_swingup_demo.gif" width="500px" alt="swinging up pendulum demonstraion">
-<img src="./media/cartpole_demo.gif" width="500px" alt="swinging up pendulum demonstraion"> -->
-<!-- https://github.com/MizuhoAOKI/python_simple_mppi/assets/63337525/bda8cdbc-5cfd-4885-ac8d-3240867f027c -->
+## Video demonstrations
+
+* Oval path with circular obstacles
+
+
+* Figure-8 path.
+
 
 ## Setup
 
@@ -48,33 +52,16 @@ mamba install ipykernel numpy pandas matplotlib seaborn numba
       * `brew install ffmpeg`
     * Check the official website if necessary
       * https://ffmpeg.org/
-
     </details>
 
 ## Usage
 
-## Path Tracking Examples
+* To see the differential drive model in action run either ```mppi_ee7500_proj_oval.ipynb``` or ```mppi_ee7500_proj_figure_eight.ipynb``` notebooks.
+* To visualize or create custom paths, use the ```traj_gen.ipynb```.
+* To add new dynamics models see the ```./scripts/diffdrive.py```.
+* To add/modify cost functions/distribution sampling see the ```./scripts/mppi.py```.
+* Various plotting and computational utility functions are in ```./scripts/utils.py```.
 
-* Ackermann car model
-<img src="./media/pathtracking_ackermann.png" width="300px" alt="pendulum">
-
-* Differential drive model (applicable for 2W, 4W or more configurations)
-
-## Run Experiments
-
-* Run simulation for ackermann drive model (originally from Mizuho)
-
-```sh
-cd python_simple_mppi
-poetry run python scripts/mppi_pathtracking.py
-```
-
-* Run simulation for ackermann drive model with obstacles (originally from Mizuho)
-
-```sh
-cd python_simple_mppi
-poetry run jupyter notebook notebooks/mppi_pathtracking_obav.ipynb
-    ```
 
 ## References
 1. G. Williams et al. "Information-Theoretic Model Predictive Control: Theory and Applications to Autonomous Driving" 
@@ -82,6 +69,5 @@ poetry run jupyter notebook notebooks/mppi_pathtracking_obav.ipynb
     * PDF : https://arxiv.org/pdf/1707.02342.pdf
 
 ## Other notable projects
-
 * mpc_python: https://github.com/mcarfagno/mpc_python
 * nav2's MPPI impelemtation: https://vimeo.com/879001391
