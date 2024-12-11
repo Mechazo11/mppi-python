@@ -2,7 +2,7 @@
 
 # A Simple Python Implementation of Information-Theoretic Model Predictive Path Integral Controller
 
-A simple python implementation of Information-Theoretic Model Predictive Path-Integral (MPPI) controller introduced in [[G. Williams et al., 2018]](#references) in their 2018 paper. This project is based on the work by [Mizuho Aoki](https://mizuhoaoki.github.io/) but contains the following modifications
+A simple python implementation of Information-Theoretic Model Predictive Path-Integral (MPPI) controller introduced by G. Williams et al. in their [2018 paper](#references). This project is based on the work by [Mizuho Aoki](https://mizuhoaoki.github.io/) but contains the following modifications
 
 * Notebook to generate and visualize custom trajectories
 * JIT acceleration of cost function evaluation using Numba.
