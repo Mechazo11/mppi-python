@@ -7,7 +7,7 @@ A simple python implementation of Information-Theoretic Model Predictive Path-In
 * Notebook to generate and visualize custom trajectories
 * JIT acceleration of cost function evaluation using Numba.
 * Ideal-Differential Drive Kinematic model
-* Both ```stage``` and ```terminal``` costs implemented as simple quadratic const function.
+* Both ```stage``` and ```terminal``` costs implemented as simple quadratic cost function.
 
 This work was part of my final project for EE 7500: Model Predictive Control class taught by [Dr. Xiangyu Meng](https://sites.google.com/view/xmeng/home?authuser=0) at Louisiana State University.
 
